@@ -1,6 +1,6 @@
 # Image Captioning including Attention
 
-to be updated later...
+To be updated later...
 
 ## Dataset
 
