@@ -11,6 +11,10 @@ When you upload a image, it shows like
 
 [Flickr8k dataset from Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 
+## Deploy
+![Untitled Diagram drawio (2)](https://user-images.githubusercontent.com/76429734/163243232-b42f427c-b470-4a05-81a1-8e6b2b5f3e08.png)
+
+
 ## Getting started in the local machine:
 
 1. Clone this repo
