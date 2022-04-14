@@ -5,8 +5,9 @@ from generate_html import generate_html
 from model import EncoderDecoder
 import json
 import torch
+from base64 import b64encode
 from get_loader import dataset, data_loader
-from read import read_text
+from read import read_text, text2speech
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG', 'bmp'])
 text = ""
@@ -51,15 +52,17 @@ def request_operations(request):
         return jsonify({"error": 1001, "msg": "Only png、PNG、jpg、JPG、bmp"})
     cap, img_base64 = get_caps_from_upload(f, final_model)
     text = cap[0].upper() + cap[1:]
-    return text, img_base64
+    audio = text2speech(text)
+    audio_base64 = "data:audio/mpeg;base64," + b64encode(audio).decode('utf-8')
+    return text, img_base64, audio_base64
 
 @app.route('/', methods=['POST', 'GET'])
 def upload():
     global text
     global img_base64
     if request.method == 'POST':
-        text, img_base64 = request_operations(request)
-        return render_template('preview_ok.html', text=text, uri=img_base64)
+        text, img_base64, audio_base64 = request_operations(request)
+        return render_template('preview_ok.html', text=text, uri=img_base64, audio=audio_base64)
     return render_template('preview.html')
 
 
@@ -68,14 +71,14 @@ def show():
     global text
     global img_base64
     if request.method == 'POST':
-        text, img_base64 = request_operations(request)
-    return render_template('preview_ok.html', text=text, uri=img_base64)
+        text, img_base64, audio_base64 = request_operations(request)
+    return render_template('preview_ok.html', text=text, uri=img_base64, audio=audio_base64)
 
 
 @app.route('/read/<text>/', methods=['GET', 'POST'])
 def read(text):
     read_text(text)
-    return redirect(url_for('show', text=text, is_upload=True, uri=None))
+    return redirect(url_for('show', text=text, uri=None))
 
 
 @app.route('/url')
