@@ -8,10 +8,14 @@ import torch
 from base64 import b64encode
 from get_loader import dataset, data_loader
 from read import read_text, text2speech
+import os 
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG', 'bmp'])
 text = ""
 img_base64 = None
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'image-text-to-voice-key.json'
+
+
 
 # mapping
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
