@@ -4,22 +4,22 @@ steps:
   entrypoint: 'bash'
   args: [
    '-c', 
-   'docker pull us.gcr.io/image-347015/imagecaption || exit 0'
+   'docker pull us.gcr.io/image-347015/imageaudio || exit 0'
   ]
 #step 2
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','us.gcr.io/image-347015/imagecaption:latest','.']
+  args: ['build','-t','us.gcr.io/image-347015/imageaudio:latest','.']
 
 # step3 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','us.gcr.io/image-347015/imagecaption:latest']
+  args: ['push','us.gcr.io/image-347015/imageaudio:latest']
 
 #step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: [
    'rollout', 
    'restart', 
-   'deployment/imagedevep'
+   'deployment/imageaudio'
    #'container-regression=us.gcr.io/regression-flask/container-regression:latest'
   ]
   env:
