@@ -1,3 +1,4 @@
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -19,6 +20,20 @@ spec:
         name: imageaudio
         ports:
         - containerPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: imageaudio
+spec:
+  selector:
+     run: imageaudio
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
 
 # apiVersion: apps/v1
 # kind: Deployment
