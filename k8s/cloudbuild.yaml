@@ -33,12 +33,12 @@ steps:
   args: [
    'build',
    '-t', 
+   'gcr.io/image-347015/imageaudio:new',
+   '-t', 
    'gcr.io/image-347015/imageaudio:latest',
    '.'
   ]
-# step3 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/image-347015/imageaudio:latest']
+
 # step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/deployment.yaml']
@@ -55,9 +55,13 @@ steps:
    'set', 
    'image', 
    'deployment', 
-   'imageaudio=gcr.io/image-347015/imageaudio:latest'
+   'imageaudio=gcr.io/image-347015/imageaudio:new'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 
+images: [
+   'gcr.io/image-347015/imageaudio:new',
+   'gcr.io/image-347015/imageaudio:latest'
+  ]
