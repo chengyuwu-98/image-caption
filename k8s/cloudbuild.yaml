@@ -38,9 +38,7 @@ steps:
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
-   'build', 
-   '-t', 
-   'gcr.io/image-347015/imageaudio:origin',
+   'build',
    '-t', 
    'gcr.io/image-347015/imageaudio:latest',
    '.'
@@ -59,13 +57,12 @@ steps:
    'image', 
    'deployment', 
    'imageaudio', 
-   'imageaudio=gcr.io/image-347015/imageaudio:origin'
+   'imageaudio=gcr.io/image-347015/imageaudio:latest'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/image-347015/imageaudio:origin',
    'gcr.io/image-347015/imageaudio:latest'
   ]  
