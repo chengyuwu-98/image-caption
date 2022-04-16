@@ -45,7 +45,7 @@ steps:
   ]
 # step3 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','us.gcr.io/image-347015/imageaudio:latest']
+  args: ['push','gcr.io/image-347015/imageaudio:latest']
 # step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/deployment.yaml']
