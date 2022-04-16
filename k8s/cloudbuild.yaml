@@ -1,11 +1,4 @@
-# steps:
-# #step 1
-# - name: 'gcr.io/cloud-builders/docker' 
-#   entrypoint: 'bash'
-#   args: [
-#    '-c', 
-#    'docker pull us.gcr.io/image-347015/imageaudio || exit 0'
-#   ]
+
 # #step 2
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build','-t','us.gcr.io/image-347015/imageaudio:latest','.']
@@ -19,51 +12,52 @@
 #   args: [
 #    'rollout', 
 #    'restart', 
-#    'deployment/imageaudio'
-#    #'container-regression=us.gcr.io/regression-flask/container-regression:latest'
+#    'deployment',
+#    'imageaudio', 
+#    'imageaudio=gcr.io/image-347015/imageaudio:latest'
 #   ]
 #   env:
 #   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
 #   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 
 
-steps:
-#step 1
-# - name: 'gcr.io/cloud-builders/docker' 
-#   entrypoint: 'bash'
+# steps:
+# #step 1
+# # - name: 'gcr.io/cloud-builders/docker' 
+# #   entrypoint: 'bash'
+# #   args: [
+# #    '-c', 
+# #    'docker pull gcr.io/image-347015/imageaudio:latest || exit 0'
+# #   ]
+# #step 2
+# - name: gcr.io/cloud-builders/docker
 #   args: [
-#    '-c', 
-#    'docker pull gcr.io/image-347015/imageaudio:latest || exit 0'
+#    'build',
+#    '-t', 
+#    'gcr.io/image-347015/imageaudio:latest',
+#    '.'
 #   ]
-#step 2
-- name: gcr.io/cloud-builders/docker
-  args: [
-   'build',
-   '-t', 
-   'gcr.io/image-347015/imageaudio:latest',
-   '.'
-  ]
-# step3 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/image-347015/imageaudio:latest']
-# step 4
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', 'k8s/deployment.yaml']
+# # step3 
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push','gcr.io/image-347015/imageaudio:latest']
+# # step 4
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: ['apply', '-f', 'k8s/deployment.yaml']
 
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=image'
+#   env:
+#   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+#   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
  
-#step 5
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: [
-   'set', 
-   'image', 
-   'deployment', 
-   'imageaudio', 
-   'imageaudio=gcr.io/image-347015/imageaudio:latest'
-  ]
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=image'
+# #step 5
+# - name: 'gcr.io/cloud-builders/kubectl'
+#   args: [
+#    'set', 
+#    'image', 
+#    'deployment', 
+#    'imageaudio', 
+#    'imageaudio=gcr.io/image-347015/imageaudio:latest'
+#   ]
+#   env:
+#   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+#   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 
