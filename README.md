@@ -14,6 +14,10 @@ When you upload a image, it shows like
 ## Deploy
 ![Untitled Diagram drawio (2)](https://user-images.githubusercontent.com/76429734/163243232-b42f427c-b470-4a05-81a1-8e6b2b5f3e08.png)
 
+## Load test
+Load test is implemented use Locust for 10000 users at peak. 
+![183555737d925b834cbd7aacb32d79a](https://user-images.githubusercontent.com/97444802/163694662-286a601d-9259-497d-a372-ed335328a86b.png)
+
 
 ## Getting started in the local machine:
 
