@@ -43,21 +43,16 @@ steps:
    'gcr.io/image-347015/imageaudio:latest',
    '.'
   ]
-#step 3
+# step3 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','us.gcr.io/image-347015/imageaudio:latest']
+# step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/deployment.yaml']
 
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
- 
-#  #step 4
-# - name: 'gcr.io/cloud-builders/kubectl'
-#   args: ['apply', '-f', 'k8s/service.yaml']
-
-#   env:
-#   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-#   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
  
 #step 5
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -71,7 +66,4 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
-# push images to Google Container Registry with tags
-images: [
-   'gcr.io/image-347015/imageaudio:latest'
-  ]  
+
