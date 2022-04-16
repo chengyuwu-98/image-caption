@@ -7,14 +7,23 @@ import json
 import torch
 from base64 import b64encode
 from get_loader import dataset, data_loader
-from read import read_text, text2speech
+# from read import read_text, text2speech
 import os 
+
+from gtts import gTTS
+def textTospeech(text):
+    audio = gTTS(text)
+    audio_res = b""
+    for i in audio.stream():
+        audio_res = audio_res + i
+    return("data:audio/mpeg;base64," + b64encode(audio_res).decode('utf-8'))
+
+
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG', 'bmp'])
 text = ""
 img_base64 = None
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'image-text-to-voice-key.json'
-
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'image-text-to-voice.json'
 
 
 # mapping
@@ -56,8 +65,9 @@ def request_operations(request):
         return jsonify({"error": 1001, "msg": "Only png、PNG、jpg、JPG、bmp"})
     cap, img_base64 = get_caps_from_upload(f, final_model)
     text = cap[0].upper() + cap[1:]
-    audio = text2speech(text)
-    audio_base64 = "data:audio/mpeg;base64," + b64encode(audio).decode('utf-8')
+    # audio = text2speech(text)
+    audio_base64 = textTospeech(text)
+    # audio_base64 = "data:audio/mpeg;base64," + b64encode(audio).decode('utf-8')
     return text, img_base64, audio_base64
 
 @app.route('/', methods=['POST', 'GET'])
@@ -79,10 +89,10 @@ def show():
     return render_template('preview_ok.html', text=text, uri=img_base64, audio=audio_base64)
 
 
-@app.route('/read/<text>/', methods=['GET', 'POST'])
-def read(text):
-    read_text(text)
-    return redirect(url_for('show', text=text, uri=None))
+# @app.route('/read/<text>/', methods=['GET', 'POST'])
+# def read(text):
+#     read_text(text)
+#     return redirect(url_for('show', text=text, uri=None))
 
 
 @app.route('/url')
