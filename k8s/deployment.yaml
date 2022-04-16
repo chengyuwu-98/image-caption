@@ -28,7 +28,7 @@ metadata:
   name: imageaudio
 spec:
   selector:
-     run: imageaudio
+     app: imageaudio
   ports:
   - protocol: TCP
     port: 80
