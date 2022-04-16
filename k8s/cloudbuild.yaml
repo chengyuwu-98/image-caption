@@ -47,7 +47,8 @@ steps:
   ]
 #step 3
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', 'k8s/deployment.yaml', 'k8s/service.yaml']
+  args: ['apply', '-f', 'k8s/deployment.yaml']
+  ['apply', '-f', 'k8s/service.yaml']
 
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
