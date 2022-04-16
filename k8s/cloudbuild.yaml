@@ -55,7 +55,6 @@ steps:
    'set', 
    'image', 
    'deployment', 
-   'imageaudio', 
    'imageaudio=gcr.io/image-347015/imageaudio:latest'
   ]
   env:
