@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: imageaudio
+  name: imageaudio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: imageaudio
+  template:
+    metadata:
+      labels:
+        run: imageaudio
+    spec:
+      containers:
+      - image: gcr.io/image-347015/imageaudio:latest
+        name: imageaudio
+        ports:
+        - containerPort: 8080
