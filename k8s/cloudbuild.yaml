@@ -29,12 +29,12 @@
 
 steps:
 #step 1
-- name: 'gcr.io/cloud-builders/docker' 
-  entrypoint: 'bash'
-  args: [
-   '-c', 
-   'docker pull gcr.io/image-347015/imageaudio:latest || exit 0'
-  ]
+# - name: 'gcr.io/cloud-builders/docker' 
+#   entrypoint: 'bash'
+#   args: [
+#    '-c', 
+#    'docker pull gcr.io/image-347015/imageaudio:latest || exit 0'
+#   ]
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
