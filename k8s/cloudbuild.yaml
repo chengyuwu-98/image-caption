@@ -50,11 +50,10 @@ steps:
 #step 5
 - name: 'gcr.io/cloud-builders/kubectl'
   args: [
-   'rollout',
-   'restart',
    'set', 
    'image', 
    'deployment', 
+   'imageaudio',
    'imageaudio=gcr.io/image-347015/imageaudio:new'
   ]
   env:
