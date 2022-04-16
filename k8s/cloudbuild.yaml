@@ -1,24 +1,24 @@
 
-# #step 2
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build','-t','us.gcr.io/image-347015/imageaudio:latest','.']
+#step 2
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build','-t','us.gcr.io/image-347015/imageaudio:latest','.']
 
-# # step3 
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push','us.gcr.io/image-347015/imageaudio:latest']
+# step3 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','us.gcr.io/image-347015/imageaudio:latest']
 
-# #step 4
-# - name: 'gcr.io/cloud-builders/kubectl'
-#   args: [
-#    'rollout', 
-#    'restart', 
-#    'deployment',
-#    'imageaudio', 
-#    'imageaudio=gcr.io/image-347015/imageaudio:latest'
-#   ]
-#   env:
-#   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-#   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
+#step 4
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: [
+   'rollout', 
+   'restart', 
+   'deployment',
+   'imageaudio', 
+   'imageaudio=gcr.io/image-347015/imageaudio:latest'
+  ]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 
 
 # steps:
