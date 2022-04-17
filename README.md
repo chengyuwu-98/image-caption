@@ -14,14 +14,19 @@ When you upload a image, it shows like
 ## Deploy
 ![Disaster Recovery with Application Replication (2)](https://user-images.githubusercontent.com/76429734/163736338-8e3979d9-385d-4502-bb0e-6bca66f70c50.png)
 
-### How to trigger Cloud Build：
-Once you update the code for application, run `git tag <tagname>` `git push origin <tagname>` the Cloud Build will automatically begin and the application will update. 
+### How to trigger Continous Delivery：
+Once you update the code for application, run `git tag <tagname>` `git push origin <tagname>` the Cloud Build will automatically begin and the application will update.
+Therefore, we can make sure evry time there is new version of our application, the application can update automatically.
 
 
 
 ## Load test
-Load test is implemented use Locust for 10000 users at peak. 
+Load test is implemented use Locust for 10000 users at peak on local machine:
 ![183555737d925b834cbd7aacb32d79a](https://user-images.githubusercontent.com/97444802/163694662-286a601d-9259-497d-a372-ed335328a86b.png)
+
+Load test is implemented use Locust for 10000 users on peak at GCP:
+<img width="951" alt="loadtest" src="https://user-images.githubusercontent.com/76429734/163736891-a2ad8a36-9ff6-4c55-ae68-bdb87dd35689.png">
+
 
 
 ## Getting started in the local machine:
