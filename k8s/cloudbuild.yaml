@@ -1,10 +1,10 @@
 # #step 2
 # - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build','-t','gcr.io/image-347015/imageaudio:latest','.']
+#   args: ['build','-t','gcr.io/image-347504/imageaudio:latest','.']
 
 # # step3 
 # - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push','gcr.io/image-347015/imageaudio:latest']
+#   args: ['push','gcr.io/image-347504/imageaudio:latest']
 
 # #step 4
 # - name: 'gcr.io/cloud-builders/kubectl'
@@ -13,7 +13,7 @@
 #    'restart', 
 #    'deployment',
 #    'imageaudio', 
-#    'imageaudio=gcr.io/image-347015/imageaudio:latest'
+#    'imageaudio=gcr.io/image-347504/imageaudio:latest'
 #   ]
 #   env:
 #   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
@@ -26,16 +26,16 @@ steps:
 #   entrypoint: 'bash'
 #   args: [
 #    '-c', 
-#    'docker pull gcr.io/image-347015/imageaudio:latest || exit 0'
+#    'docker pull gcr.io/image-347504/imageaudio:latest || exit 0'
 #   ]
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
    'build',
    '-t', 
-   'gcr.io/image-347015/imageaudio:new',
+   'gcr.io/image-347504/imageaudio:$TAG_NAME',
    '-t', 
-   'gcr.io/image-347015/imageaudio:latest',
+   'gcr.io/image-347504/imageaudio:latest',
    '.'
   ]
 
@@ -54,13 +54,13 @@ steps:
    'image', 
    'deployment', 
    'imageaudio',
-   'imageaudio=gcr.io/image-347015/imageaudio:new'
+   'imageaudio=gcr.io/image-347504/imageaudio:$TAG_NAME'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=image'
 
 images: [
-   'gcr.io/image-347015/imageaudio:new',
-   'gcr.io/image-347015/imageaudio:latest'
+   'gcr.io/image-347504/imageaudio:$TAG_NAME',
+   'gcr.io/image-347504/imageaudio:latest'
   ]
