@@ -12,7 +12,12 @@ When you upload a image, it shows like
 [Flickr8k dataset from Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 
 ## Deploy
-![Untitled Diagram drawio (2)](https://user-images.githubusercontent.com/76429734/163243232-b42f427c-b470-4a05-81a1-8e6b2b5f3e08.png)
+![Disaster Recovery with Application Replication (2)](https://user-images.githubusercontent.com/76429734/163736338-8e3979d9-385d-4502-bb0e-6bca66f70c50.png)
+
+### How to trigger Cloud Build：
+Once you update the code for application, run `git tag <tagname>` `git push origin <tagname>` the Cloud Build will automatically begin and the application will update. 
+
+
 
 ## Load test
 Load test is implemented use Locust for 10000 users at peak. 
