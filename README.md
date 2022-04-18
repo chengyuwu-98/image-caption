@@ -16,7 +16,7 @@ When you upload a image, it shows like
 
 ### How to trigger Continous Delivery：
 Once you update the code for application, run `git tag <tagname>` `git push origin <tagname>` the Cloud Build will automatically begin and the application will update.
-Therefore, we can make sure evry time there is new version of our application, the application can update automatically.
+Therefore, we can make sure every time there is new version of our application, it can update automatically.
 
 
 
