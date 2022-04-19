@@ -20,7 +20,8 @@ When you upload a image, it looks like:
 [Flickr8k dataset from Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 
 ## Deploy
-![Disaster Recovery with Application Replication (2)](https://user-images.githubusercontent.com/76429734/163736338-8e3979d9-385d-4502-bb0e-6bca66f70c50.png)
+![updated diagram](https://user-images.githubusercontent.com/76429734/164073352-1f0cbc3a-dd22-4bfe-9648-01daea1e1e19.png)
+
 
 ### How to trigger Continous Delivery：
 Once you update the code for application, run `git tag <tagname>` `git push origin <tagname>` the Cloud Build will automatically begin and the application will update.
