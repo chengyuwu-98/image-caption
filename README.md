@@ -8,9 +8,11 @@ This repo was originally forked from [here.](https://github.com/bkenan/image_cap
 ## Demo
 
 The default frontend looks like
+
 ![image](https://user-images.githubusercontent.com/97444802/163241489-7ab169b6-2865-4668-be47-a5827a145a47.png)
-When you upload a image, it shows like 
-![image](https://user-images.githubusercontent.com/97444802/163241619-63c6b4dd-8755-4f1a-83db-29dfb064da6d.png)
+
+When you upload a image, it looks like:
+![image](https://user-images.githubusercontent.com/53462948/164069756-164c8ba3-1cbf-462f-900b-4638444c6c7c.png)
 
 ## Dataset
 
@@ -24,14 +26,12 @@ Once you update the code for application, run `git tag <tagname>` `git push orig
 Therefore, we can make sure every time there is a new version of our application, it can update automatically.
 
 
-
 ## Load test
 Load test is implemented use Locust for 10000 users at peak on local machine:
 ![183555737d925b834cbd7aacb32d79a](https://user-images.githubusercontent.com/97444802/163694662-286a601d-9259-497d-a372-ed335328a86b.png)
 
 Load test is implemented use Locust for 10000 users on peak at GCP:
 <img width="951" alt="loadtest" src="https://user-images.githubusercontent.com/76429734/163736891-a2ad8a36-9ff6-4c55-ae68-bdb87dd35689.png">
-
 
 
 ## Getting started in the local machine:
