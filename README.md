@@ -30,11 +30,8 @@ Therefore, we can make sure every time there is a new version of our application
 
 
 ## Load test
-Load test is implemented use Locust for 10000 users at peak on local machine:
+Load test is implemented use Locust for 10000 users at peak :
 ![183555737d925b834cbd7aacb32d79a](https://user-images.githubusercontent.com/97444802/163694662-286a601d-9259-497d-a372-ed335328a86b.png)
-
-Load test is implemented use Locust for 10000 users on peak at GCP:
-<img width="951" alt="loadtest" src="https://user-images.githubusercontent.com/76429734/163736891-a2ad8a36-9ff6-4c55-ae68-bdb87dd35689.png">
 
 
 ## Getting started in the local machine:
