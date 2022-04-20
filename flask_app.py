@@ -7,7 +7,6 @@ import json
 import torch
 from base64 import b64encode
 from get_loader import dataset, data_loader
-# from read import read_text, text2speech
 import os 
 
 from gtts import gTTS
