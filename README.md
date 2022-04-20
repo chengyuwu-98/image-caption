@@ -34,7 +34,7 @@ Therefore, we can make sure every time there is a new version of our application
 
 
 ## Load test
-Load test is implemented use Locust for 10000 users at peak :
+Load test is implemented use Locust for 10000 users at peak and 1000 users per second:
 ![183555737d925b834cbd7aacb32d79a](https://user-images.githubusercontent.com/97444802/163694662-286a601d-9259-497d-a372-ed335328a86b.png)
 
 
