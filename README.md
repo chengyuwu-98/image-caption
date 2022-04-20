@@ -9,6 +9,9 @@ The product is designed for disabled people, who cannot see the pictures but can
 ## Starter code
 This repo was originally forked from [here.](https://github.com/bkenan/image_captioning_attention.git)
 
+## Video demo
+Watch on [Youtube](https://youtu.be/zO_nXKDzCJI)
+
 ## Demo
 
 The default frontend looks like
