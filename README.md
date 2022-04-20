@@ -17,7 +17,7 @@ The default frontend looks like
 
 When you upload a image, it looks like:
 
-![test](https://user-images.githubusercontent.com/53462948/164124782-f2a0c6eb-a9d1-4887-abc5-25807ae23e16.jpg)
+![test](https://user-images.githubusercontent.com/53462948/164124856-b6a6f3fb-6ee5-48c8-ac14-e7daf7d723e0.png)
 
 
 
