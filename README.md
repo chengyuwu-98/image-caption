@@ -1,6 +1,10 @@
 # Image Captioning including Attention
 
-The product is designed for the blind people, who cannot see the pictures but can listen to the description. We are aiming to enable blind people to access more information and experience the beauty of the world. Our product can predict the captioning of images and display in the frontend. User can upload an image and play the audio of the captioning of the image, so that the blind can "hear" the image. Our Website is http://35.202.212.110:8080/
+The product is designed for disabled people, who cannot see the pictures but can listen to the description. We are aiming to enable disabled people to access more information and experience the beauty of the world. Our product can predict the captioning of an image and display to users. A user can upload an image and play the audio of the captioning of the image, so that they can "hear" the image. Our Website is http://35.202.212.110:8080/
+
+## Dataset
+
+[Flickr8k dataset from Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
 
 ## Starter code
 This repo was originally forked from [here.](https://github.com/bkenan/image_captioning_attention.git)
@@ -15,11 +19,8 @@ When you upload a image, it looks like:
 
 ![image](https://user-images.githubusercontent.com/53462948/164069756-164c8ba3-1cbf-462f-900b-4638444c6c7c.png)
 
-## Dataset
 
-[Flickr8k dataset from Kaggle](https://www.kaggle.com/datasets/adityajn105/flickr8k)
-
-## Deploy
+## Deployment
 ![updated diagram](https://user-images.githubusercontent.com/76429734/164073352-1f0cbc3a-dd22-4bfe-9648-01daea1e1e19.png)
 
 
@@ -40,13 +41,13 @@ Load test is implemented use Locust for 10000 users on peak at GCP:
 
 1. Clone this repo
 2. Download [my trained model](https://drive.google.com/file/d/1t3QbSauxSnZhXE1DbuGwiT2AokOsqOjA/view?usp=sharing) and put it in a new "models" folder within the repo directory
-3. pip install -r requirements.txt
+3. make install
 4. Open Python Shell and run:
     import spacy
     
     from spacy.cli.download import download
     download(model="en_core_web_sm")
-5. Run app.py
+5. Run flask_app.py
 
 
 ## Getting started in Colab:
